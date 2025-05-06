@@ -13,17 +13,17 @@ public class Play {
     @Id 
     @GeneratedValue
     private Long id;
-    private Integer pointNumber; // Sequência do lance
+    private Integer pointNumber; // sequência do lance
 
     @ManyToOne
-    private Player player; // Jogador que realizou a ação
+    private Player player; // jogador que realizou a ação
     @ManyToOne
-    private Team team; // Time da ação
+    private Team team; // time da ação
     @ManyToOne
-    private Set set; // Set em que ocorreu
+    private Set set; // set em que ocorreu
 
     @Enumerated(EnumType.STRING)
     private ActionType actionType;
 
-    private boolean successful; // Ex: saque válido ou erro
+    private boolean successful; // válido ou erro
 }

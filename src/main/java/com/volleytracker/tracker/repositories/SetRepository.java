@@ -1,5 +1,12 @@
 package com.volleytracker.tracker.repositories;
 
-public interface SetRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import org.yaml.snakeyaml.events.Event.ID;
+
+import com.volleytracker.tracker.models.Set;
+
+@Repository
+public interface SetRepository extends JpaRepository<Set, ID> {
 
 }

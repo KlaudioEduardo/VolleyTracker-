@@ -7,6 +7,6 @@ import org.yaml.snakeyaml.events.Event.ID;
 import com.volleytracker.tracker.models.Match;
 
 @Repository
-public interface MatchRepository extends JpaRepository<Match, ID> {
+public interface MatchRepository extends JpaRepository<Match, Long> {
 
 }

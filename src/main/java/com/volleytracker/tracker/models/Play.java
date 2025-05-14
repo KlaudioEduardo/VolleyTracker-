@@ -26,4 +26,78 @@ public class Play {
     private ActionType actionType;
 
     private boolean successful; // válido ou erro
+
+    
+	public Play(Long id, Integer pointNumber, Player player, Team team, Set set, ActionType actionType,
+			boolean successful) {
+		this.id = id;
+		this.pointNumber = pointNumber;
+		this.player = player;
+		this.team = team;
+		this.set = set;
+		this.actionType = actionType;
+		this.successful = successful;
+	}
+	
+	public Play() {
+		
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getPointNumber() {
+		return pointNumber;
+	}
+
+	public void setPointNumber(Integer pointNumber) {
+		this.pointNumber = pointNumber;
+	}
+
+	public Player getPlayer() {
+		return player;
+	}
+
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
+
+	public Team getTeam() {
+		return team;
+	}
+
+	public void setTeam(Team team) {
+		this.team = team;
+	}
+
+	public Set getSet() {
+		return set;
+	}
+
+	public void setSet(Set set) {
+		this.set = set;
+	}
+
+	public ActionType getActionType() {
+		return actionType;
+	}
+
+	public void setActionType(ActionType actionType) {
+		this.actionType = actionType;
+	}
+
+	public boolean isSuccessful() {
+		return successful;
+	}
+
+	public void setSuccessful(boolean successful) {
+		this.successful = successful;
+	}
+    
+    
 }

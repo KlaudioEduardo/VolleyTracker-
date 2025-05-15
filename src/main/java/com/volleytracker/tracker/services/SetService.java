@@ -14,20 +14,34 @@ public class SetService {
 	@Autowired
 	private SetRepository setRepository;
 
-	public Set save(Set set) {
-		return setRepository.save(set);
+	public List<Set> findAllSets() {
+		return setRepository.findAll();
 	}
 
-	public List<Set> findByMatchId(Long matchId) {
-	    return setRepository.findByMatchId(matchId);
+	public Set findById(Long id) {
+		return setRepository.findById(id).orElse(null);
+	}
+
+	public void save(Set set) {
+		setRepository.save(set);
 	}
 
 	public void deleteById(Long id) {
 		setRepository.deleteById(id);
 	}
-	
-	
-	
-	
+
+	public Set update(Long id, Set setDetails) {
+		Set existing = findById(id);
+		if (existing != null) {
+			// exemplo: existing.setScore(setDetails.getScore()); // ajuste conforme
+			// atributos
+			return setRepository.save(existing);
+		}
+		return null;
+	}
+
+	public List<Set> findByMatchId(Long matchId) {
+		return setRepository.findByMatchId(matchId);
+	}
 
 }

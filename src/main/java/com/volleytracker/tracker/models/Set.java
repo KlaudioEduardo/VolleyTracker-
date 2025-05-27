@@ -2,7 +2,11 @@ package com.volleytracker.tracker.models;
 
 import java.util.List;
 
+import com.volleytracker.tracker.enums.SetStatus;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -24,6 +28,13 @@ public class Set {
 
     @OneToMany(mappedBy = "set")
     private List<Play> plays;
+    
+    @Enumerated(EnumType.STRING)
+	private SetStatus status;
+    
+    public boolean isFinished() {
+        return this.status == SetStatus.FINISHED;
+    }
     
 
 	public Set(Long id, Integer setNumber, Integer teamAScore, Integer teamBScore, Match match, List<Play> plays) {
@@ -87,5 +98,6 @@ public class Set {
 	public void setPlays(List<Play> plays) {
 		this.plays = plays;
 	}
+
     
 }

@@ -1,5 +1,7 @@
 package com.volleytracker.tracker.models;
 
+import com.volleytracker.tracker.enums.ActionType;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
